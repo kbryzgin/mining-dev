@@ -3,7 +3,7 @@ import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
   site: 'https://mining-dev.ru',
-  // GitHub Pages custom domain: keep base empty.
+  base: '/mining-dev',
   trailingSlash: 'never',
   vite: {
     plugins: [tailwindcss()],
