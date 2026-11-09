@@ -1,4 +1,5 @@
 ---
+import { withBase } from '../utils/paths';
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 <BaseLayout title="О разработчике — Mining-Dev" description="IT-разработчик для горно-геологической отрасли: разработка программных модулей, автоматизация процессов и опыт участия в проектах разработки ГГИС-платформ.">
@@ -10,7 +11,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <section class="container detail-content about-profile">
     <div class="about-intro">
       <div class="about-photo-wrap">
-        <img class="about-photo" src="/images/profile-portrait.webp" alt="Портрет разработчика Mining-Dev" width="960" height="1200" fetchpriority="high" />
+        <img class="about-photo" src={withBase("/images/profile-portrait.webp")} alt="Портрет разработчика Mining-Dev" width="960" height="1200" fetchpriority="high" />
         <div class="photo-caption">
           <strong>Константин Брызгин</strong>
           <span>Специалист по автоматизации ГГИС</span>
