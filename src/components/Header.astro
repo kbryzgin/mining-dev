@@ -1,0 +1,43 @@
+---
+import GearMark from './GearMark.astro';
+const links = [
+  { href: '/services', label: 'Услуги' },
+  { href: '/solutions', label: 'Решения' },
+  { href: '/blog', label: 'Блог' },
+  { href: '/about', label: 'Обо мне' },
+];
+---
+<header class="site-header">
+  <div class="container nav-wrap">
+    <a class="brand" href="/" aria-label="Mining-Dev — главная">
+      <span class="brand-symbol"><GearMark /></span>
+      <span class="brand-wordmark">MINING-DEV<small>РАЗРАБОТКА • ГГИС • АВТОМАТИЗАЦИЯ</small></span>
+    </a>
+    <nav id="primary-navigation" aria-label="Основная навигация">
+      {links.map((link) => <a href={link.href} aria-current={(link.href === '/blog' ? Astro.url.pathname.startsWith('/blog') : Astro.url.pathname === link.href) ? 'page' : undefined}>{link.label}</a>)}
+    </nav>
+    <a class="nav-contact" href="/contacts">Обсудить задачу <span>↗</span></a>
+    <button class="menu-toggle" type="button" aria-label="Открыть меню" aria-controls="primary-navigation" aria-expanded="false">☰</button>
+  </div>
+</header>
+<script>
+  const toggle = document.querySelector('.menu-toggle');
+  const nav = document.querySelector('.site-header nav');
+  const closeMenu = () => {
+    toggle?.setAttribute('aria-expanded', 'false');
+    toggle?.setAttribute('aria-label', 'Открыть меню');
+    nav?.classList.remove('is-open');
+  };
+
+  toggle?.addEventListener('click', () => {
+    const opened = toggle.getAttribute('aria-expanded') === 'true';
+    toggle.setAttribute('aria-expanded', String(!opened));
+    toggle.setAttribute('aria-label', opened ? 'Открыть меню' : 'Закрыть меню');
+    nav?.classList.toggle('is-open', !opened);
+  });
+
+  nav?.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMenu));
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') closeMenu();
+  });
+</script>

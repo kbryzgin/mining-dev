@@ -1,0 +1,51 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout title="О разработчике — Mining-Dev" description="IT-разработчик для горно-геологической отрасли: разработка программных модулей, автоматизация процессов и опыт участия в проектах разработки ГГИС-платформ.">
+  <section class="page-hero container">
+    <span class="eyebrow">ОБО МНЕ</span>
+    <h1>Разработка программных решений<br/><em>на стыке IT и геологии.</em></h1>
+    <p>Я IT-разработчик, специализируюсь на создании программных решений для горно-геологической отрасли. Разрабатываю программные модули и специализированные инструменты, автоматизирую инженерные процессы и работаю с API различных ГГИС.</p>
+  </section>
+  <section class="container detail-content about-profile">
+    <div class="about-intro">
+      <div class="about-photo-wrap">
+        <img class="about-photo" src="/images/profile-portrait.webp" alt="Портрет разработчика Mining-Dev" width="960" height="1200" fetchpriority="high" />
+        <div class="photo-caption">
+          <strong>Константин Брызгин</strong>
+          <span>Специалист по автоматизации ГГИС</span>
+          <span>Разработчик</span>
+        </div>
+      </div>
+      <div class="about-intro-copy">
+        <span class="eyebrow">ПРОФЕССИОНАЛЬНЫЙ ПРОФИЛЬ</span>
+        <h2>Разработка ПО<br/><em>для горной отрасли.</em></h2>
+        <p>Имею практический опыт разработки программных модулей и автоматизации инженерных процессов, а также опыт работы в проектах по разработке горно-геологических информационных платформ.</p>
+        <p>Мой профессиональный опыт объединяет разработку программного обеспечения, участие в проектах разработки ГГИС, профильное IT-образование и восемь лет практической работы в горной геологии. Это позволяет мне понимать не только техническую реализацию, но и производственный контекст, в котором работает программный продукт.</p>
+      </div>
+    </div>
+    <h2>Образование</h2>
+    <div class="education-list">
+      <article><span>МАГИСТР · 2026</span><h3>Информационные системы и технологии</h3><p>Профиль: Геоинформационные системы · Уральский государственный горный университет.</p></article>
+      <article><span>БАКАЛАВР · 2016</span><h3>Геология</h3><p>Южно-Уральский государственный университет.</p></article>
+    </div>
+    <div class="profile-facts">
+      <div><strong>8 лет</strong><span>опыт в горной геологии</span></div>
+      <div><strong>IT + Геология</strong><span>образование и практика</span></div>
+      <div><strong>IT + ГГИС</strong><span>разработка программных платформ</span></div>
+    </div>
+  </section>
+  <style>
+    .about-profile { max-width: 1080px; }
+    .about-intro { display:grid; grid-template-columns:minmax(260px, .78fr) minmax(0, 1.22fr); gap:clamp(28px,5vw,64px); align-items:center; margin-bottom:64px; }
+    .about-photo-wrap { position:relative; width:100%; max-width:320px; overflow:hidden; border:1px solid rgba(91,190,225,.24); background:#071321; }
+    .about-photo { display:block; width:100%; aspect-ratio:4/5; object-fit:cover; object-position:center 34%; }
+    .photo-caption { display:flex; flex-direction:column; gap:5px; padding:14px 16px 16px; border-top:1px solid rgba(91,190,225,.2); background:rgba(4,14,25,.96); }
+    .photo-caption strong { color:#edf6ff; font-size:1rem; font-weight:650; letter-spacing:.01em; }
+    .photo-caption span { color:#72cde9; font-size:.76rem; line-height:1.4; letter-spacing:.015em; }
+    .about-intro-copy h2 { margin:12px 0 20px; font-size:clamp(1.8rem,3vw,2.55rem); line-height:1.16; color:#edf6ff; }
+    .about-intro-copy h2 em { color:#69c8e6; font-style:normal; }
+    .about-intro-copy p { font-size:1rem; line-height:1.85; color:#a9bbcd; margin:0 0 18px; }
+    @media(max-width:700px) { .about-intro { grid-template-columns:1fr; gap:28px; margin-bottom:44px; } .about-photo-wrap { max-width:300px; } }
+  </style>
+</BaseLayout>

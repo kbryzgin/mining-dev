@@ -1,0 +1,7 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+const posts=(await getCollection('blog',({data})=>!data.draft)).sort((a,b)=>b.data.pubDate.valueOf()-a.data.pubDate.valueOf());
+const categories=['Разработка ГГИС','Автоматизация','Python','SQL и базы данных','Алгоритмы','Инженерные решения'];
+---
+<BaseLayout title="Блог — Mining-Dev" description="Технические статьи о разработке и автоматизации ГГИС, Python, SQL и инженерных алгоритмах."><section class="page-hero container"><span class="eyebrow">БЛОГ</span><h1>Разбираю технологии<br/><em>без чёрных ящиков.</em></h1><p>Технические статьи, практические заметки и разборы инженерных решений для горно-геологической отрасли.</p></section><section class="container blog-categories"><span class="eyebrow">ТЕМЫ ПУБЛИКАЦИЙ</span><div class="tag-list">{categories.map(c=><span>{c}</span>)}</div></section><section class="container blog-list">{posts.map(post=><a class="blog-row" href={`/blog/${post.id}`}><div class="blog-row-meta"><span>{post.data.category}</span><time>{post.data.pubDate.toLocaleDateString('ru-RU')}</time></div><div><h2>{post.data.title}</h2><p>{post.data.description}</p><div class="tag-list">{post.data.tags.map(tag=><span>{tag}</span>)}</div></div><span class="row-arrow">↗</span></a>)}{!posts.length&&<div class="placeholder-panel"><h2>Первые публикации готовятся</h2><p>В блоге будут выходить технические разборы, руководства и заметки о разработке программных решений для горно-геологической отрасли.</p></div>}</section></BaseLayout>

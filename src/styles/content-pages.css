@@ -1,0 +1,12 @@
+.problem-grid,.case-grid,.technology-grid,.detail-topic-grid,.education-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.problem-card,.case-card,.technology-grid article,.detail-topic-grid article,.education-list article{border:1px solid rgba(125,169,205,.16);background:rgba(8,24,42,.52);padding:26px;border-radius:12px}
+.problem-number,.technology-grid article>span,.education-list article>span{display:block;color:#54c8ed;font-size:.72rem;letter-spacing:.12em;margin-bottom:18px}
+.problem-card h3,.case-card h3,.technology-grid h3,.detail-topic-grid h3,.education-list h3{font-size:1.08rem;line-height:1.35;margin:0 0 12px;color:#edf6ff}
+.problem-card p,.case-card p,.technology-grid p,.detail-topic-grid p,.education-list p{color:#9fb2c6;line-height:1.7;margin:0}
+.case-card{display:flex;flex-direction:column;min-height:290px;text-decoration:none;transition:border-color .2s,transform .2s}.case-card:hover{border-color:rgba(84,200,237,.55);transform:translateY(-3px)}
+.case-card .case-tech{margin-top:auto;padding-top:22px;color:#64c9e9;font-size:.78rem}.case-card .read-more{padding-top:16px;color:#d8e9f7;font-size:.85rem}
+.detail-content{max-width:900px;padding-top:35px;padding-bottom:90px}.detail-content h2{font-size:1.55rem;margin:36px 0 14px;color:#edf6ff}.detail-content h2:first-child{margin-top:0}.detail-content p{font-size:1rem;line-height:1.85;color:#a9bbcd;margin:0 0 18px}
+.detail-topic-grid{grid-template-columns:repeat(2,minmax(0,1fr));margin:24px 0 40px}.case-detail .case-tech{color:#61c8e9}.about-profile{max-width:850px}
+.education-list{grid-template-columns:repeat(2,minmax(0,1fr));margin:22px 0 36px}.profile-facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:34px}.profile-facts div{padding:20px;border-left:2px solid #45bde6;background:rgba(9,30,49,.45)}.profile-facts strong,.profile-facts span{display:block}.profile-facts strong{font-size:1.1rem;color:#eaf6ff;margin-bottom:7px}.profile-facts span{font-size:.82rem;color:#91a9bf;line-height:1.5}.blog-categories{padding-top:12px;padding-bottom:18px}.blog-categories .tag-list{margin-top:16px}
+@media(max-width:800px){.problem-grid,.case-grid,.technology-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.problem-grid,.case-grid,.technology-grid,.detail-topic-grid,.education-list,.profile-facts{grid-template-columns:1fr}.case-card{min-height:0}.profile-facts{gap:10px}}
