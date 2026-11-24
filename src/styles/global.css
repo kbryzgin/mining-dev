@@ -86,7 +86,7 @@ h1, h2, h3, p { margin-top: 0; }
 .section-heading { max-width: 720px; }
 .section-heading h2 { color: var(--text); font-size: clamp(30px, 3.6vw, 44px); line-height: 1.18; letter-spacing: -.045em; font-weight: 650; margin: 19px 0 16px; }
 .section-heading p { color: var(--muted); max-width: 630px; font-size: 13px; line-height: 1.9; }
-.service-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 47px; }
+.service-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 47px; }
 .service-card { position: relative; display: flex; flex-direction: column; min-height: 315px; padding: 25px 25px 22px; border: 1px solid var(--line); background: linear-gradient(145deg, #0a1a2d, #071426); transition: border-color .25s, transform .25s, background .25s; }
 .service-card::before { content: ''; position: absolute; top: -1px; left: 24px; width: 34px; height: 2px; background: var(--accent-dim); opacity: .8; }
 .service-card:hover { border-color: #398fca; transform: translateY(-4px); background: #0c2035; }
