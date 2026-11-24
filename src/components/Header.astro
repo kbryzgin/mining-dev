@@ -1,6 +1,5 @@
 ---
 import { withBase } from '../utils/paths';
-import GearMark from './GearMark.astro';
 const basePath = import.meta.env.BASE_URL.replace(/\/$/, '');
 const currentPath = basePath ? (Astro.url.pathname.replace(basePath, '') || '/') : Astro.url.pathname;
 const links = [
@@ -13,8 +12,8 @@ const links = [
 <header class="site-header">
   <div class="container nav-wrap">
     <a class="brand" href={withBase("/")} aria-label="Mining-Dev — главная">
-      <span class="brand-symbol"><GearMark /></span>
-      <span class="brand-wordmark">MINING-DEV<small>РАЗРАБОТКА • ГГИС • АВТОМАТИЗАЦИЯ</small></span>
+      <img class="brand-symbol" src={withBase("/favicon.svg")} alt="" width="40" height="40" />
+      <span class="brand-wordmark">Mining-Dev</span>
     </a>
     <nav id="primary-navigation" aria-label="Основная навигация">
       {links.map((link) => <a href={withBase(link.href)} aria-current={(link.href === '/blog' ? currentPath.startsWith('/blog') : currentPath === link.href) ? 'page' : undefined}>{link.label}</a>)}
