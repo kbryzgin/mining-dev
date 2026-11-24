@@ -1,5 +1,4 @@
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap');
 
 :root {
   color-scheme: dark;
@@ -250,5 +249,3 @@ h1, h2, h3, p { margin-top: 0; }
   outline: 2px solid var(--accent);
   outline-offset: 4px;
 }
-
-@import './content-pages.css';
