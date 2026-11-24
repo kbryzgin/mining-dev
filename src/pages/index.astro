@@ -2,7 +2,7 @@
 import { withBase } from '../utils/paths';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import SectionHeading from '../components/SectionHeading.astro';
-import Plexus from '../components/Plexus.astro';
+import quarryMark from '../../public/quarry-mark.svg?raw';
 import { getCollection } from 'astro:content';
 const posts = (await getCollection('blog', ({ data }) => !data.draft))
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
@@ -42,8 +42,6 @@ const cases = [
 ---
 <BaseLayout>
   <section class="hero">
-    <Plexus />
-    <div class="hero-vignette"></div>
     <div class="container hero-inner">
       <div class="hero-copy">
         <h1>Разработка и автоматизация ГГИС</h1>
@@ -53,6 +51,7 @@ const cases = [
           <a class="button button-secondary" href="#projects">Посмотреть решения</a>
         </div>
       </div>
+      <div class="hero-mark" aria-hidden="true" set:html={quarryMark} />
     </div>
   </section>
 
@@ -128,6 +127,60 @@ const cases = [
   .hero,
   .hero-inner {
     min-height: clamp(460px, 67vh, 650px);
+  }
+
+  .hero-inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr);
+    align-items: center;
+    gap: clamp(20px, 4vw, 56px);
+  }
+
+  .hero-mark {
+    width: min(100%, 420px);
+    justify-self: center;
+  }
+
+  .hero-mark :global(svg) {
+    display: block;
+    width: 100%;
+    overflow: visible;
+  }
+
+  .hero-mark :global(path) {
+    fill-opacity: .1;
+    stroke: var(--muted);
+    stroke-width: .16;
+    stroke-linejoin: round;
+  }
+
+  .hero-mark :global(path:last-child) {
+    stroke: var(--accent);
+    animation: bench-light 6s ease-in-out infinite;
+  }
+
+  @keyframes bench-light {
+    0%, 100% { fill-opacity: .16; }
+    50% { fill-opacity: .42; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-mark :global(path:last-child) {
+      animation: none;
+      fill-opacity: .28;
+    }
+  }
+
+  @media (max-width: 850px) {
+    .hero-inner {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 16px;
+    }
+
+    .hero-mark {
+      width: min(55%, 220px);
+      justify-self: start;
+    }
   }
 
   .hero h1 {
